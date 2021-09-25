@@ -2,7 +2,7 @@ import React from 'react'
 import {UseAuth} from '../auth/UseAuth'
 import  {useHistory, useLocation} from 'react-router-dom'
 import {Form, Button, Container} from 'react-bootstrap'
-import {loginSincrono, loginGoogle} from '../actions/actionLogin'
+import {loginGoogle, loginEmailPassword} from '../actions/actionLogin'
 import {Link} from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import {useForm} from '../hooks/useForm'
@@ -27,7 +27,7 @@ export const Login = () => {
         auth.login();
         history.push(previousObjectURL || "/")
         e.preventDefault()
-        dispatch(loginSincrono(email,password))
+        dispatch(loginEmailPassword(email,password))
     }
 
     const handleGoogle = () =>{
