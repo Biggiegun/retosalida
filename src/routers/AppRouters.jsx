@@ -9,6 +9,7 @@ import {Principal} from '../pages/Principal'
 import {Carrito} from '../pages/Carrito'
 import {PrivateRoute} from './PrivateRoute'
 import {PublicRoute} from './PublicRoute'
+import Task from '../components/Task'
 
 //import {NotFound} from '../pages/NotFound'
 
@@ -24,6 +25,7 @@ export const AppRouters = () => {
 
                 {/*Rutas Privadas !!*/}
                 <PrivateRoute exact path="/carrito" component={Carrito}/>
+                <PrivateRoute exact path="/task" component={Task}/>
             </Switch>
         </Router>
     )

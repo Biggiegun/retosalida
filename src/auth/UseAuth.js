@@ -1,11 +1,11 @@
-import {useContext} from 'react'
-import {AuthContext} from './AuthProvider'
+// import {useContext} from 'react'
+// import {AuthContext} from './AuthProvider'
 
-// El authProvider dota a la apliación como tal de un proveedor
+// // El authProvider dota a la apliación como tal de un proveedor
 
-export const UseAuth = () => {
+// export const UseAuth = () => {
     
-    const contextValue = useContext(AuthContext)
+//     const contextValue = useContext(AuthContext)
     
-    return contextValue;
-}
+//     return contextValue;
+// }

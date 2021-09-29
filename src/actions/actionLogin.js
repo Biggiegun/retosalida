@@ -1,5 +1,5 @@
 import {types} from '../types/types';
-import {getAuth, signInWithPopup, signInWithEmailAndPassword} from 'firebase/auth';
+import {getAuth, signInWithPopup, signInWithEmailAndPassword, signOut} from 'firebase/auth';
 import {google} from '../firebase/firebaseConfig';
 
 export const loginEmailPassword = (email, password) =>{
@@ -42,3 +42,17 @@ export const loginSincrono = (id, displayname) =>{
         }
     }
 }
+
+export const startLogout = () => {
+    return async (dispatch) => {
+        const auth = getAuth()
+        await signOut(auth)
+        dispatch(logout)
+    }
+}
+
+export const logout = () => {
+    return{
+        type: types.logout
+    }
+    }

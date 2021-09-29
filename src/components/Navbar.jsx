@@ -1,9 +1,13 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import {UseAuth} from '../auth/UseAuth' 
+import { Link } from 'react-router-dom'
+import { startLogout } from '../actions/actionLogin';
+// import { UseAuth } from '../auth/UseAuth' 
+import { useDispatch } from 'react-redux'
 
 export const Navbar = () => {
-    const auth = UseAuth();
+    // const auth = UseAuth();
+    const dispatch = useDispatch();
+
     return (
         <div>
          <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -31,7 +35,7 @@ export const Navbar = () => {
             </Link>
             </li>
             <li className="nav-item">
-            <button onClick={auth.logout}>
+            <button onClick={()=>dispatch(startLogout())}>
             Logout
             </button>
             </li>

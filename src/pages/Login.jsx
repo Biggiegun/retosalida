@@ -1,17 +1,18 @@
 import React from 'react'
-import {UseAuth} from '../auth/UseAuth'
+// import {UseAuth} from '../auth/UseAuth'
 import  {useHistory, useLocation} from 'react-router-dom'
 import {Form, Button, Container} from 'react-bootstrap'
 import {loginGoogle, loginEmailPassword} from '../actions/actionLogin'
 import {Link} from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import {useForm} from '../hooks/useForm'
+import {Navbar} from '../components/Navbar'
 
 export const Login = () => {
-    const history = useHistory();
-    const location = useLocation();
-    const previousObjectURL = location.state?.from;
-    const auth = UseAuth();
+    // const history = useHistory();
+    // const location = useLocation();
+    // const previousObjectURL = location.state?.from;
+    // const auth = UseAuth();
     const dispatch = useDispatch();
 
     
@@ -24,8 +25,8 @@ export const Login = () => {
     const {email, password} = values;
     
     const handleLogin = (e) =>{
-        auth.login();
-        history.push(previousObjectURL || "/")
+        // auth.login();
+        // history.push(previousObjectURL || "/")
         e.preventDefault()
         dispatch(loginEmailPassword(email,password))
     }
@@ -63,16 +64,17 @@ export const Login = () => {
                 Enviar
             </Button>
             <Container className="auth__social-networks">
+                <p>Autenticarse con Google</p>
                 <Container
                     className="google-btn"
                     onClick= {handleGoogle}
-                >
+                >  
                     <Container className="google-icon-wrapper"  >
                         <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
                     </Container>
                 </Container>
             </Container>
-            <Link to="/registro">Registrarse</Link>
+            <Link to="/auth/registro">Registrarse</Link>
         </Form>
         </div>
     )
