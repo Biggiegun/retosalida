@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 import {
     HashRouter as Router,
     Switch,
-    Route,
-    Link, 
     Redirect
 } from "react-router-dom";
 //import Navbar from '../components/Navbar';
@@ -46,7 +44,7 @@ const AppRouter2 = () => {
             
             <Switch>
                 <PublicRoute2
-                   exact path="/auth"
+                    path="/auth"
                     component={AuthRouter2}
                     isAuthenticated={isLooggedIn}
                 />

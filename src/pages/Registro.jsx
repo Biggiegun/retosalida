@@ -70,7 +70,7 @@ export const Registro = () => {
                 <Button variant="primary" type="submit">
                     Registrarse
                 </Button>
-                <Link to="/login">Login</Link>
+                <Link to="/auth/login">Login</Link>
             </Form>
         </div>
     )
