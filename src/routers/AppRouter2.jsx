@@ -16,6 +16,7 @@ import { loginSincrono } from '../actions/actionLogin';
 import { useDispatch} from 'react-redux'
 import Task from '../components/Task'
 import {Principal} from '../pages/Principal'
+import {Carrito} from '../pages/Carrito'
 
 const AppRouter2 = () => {
     const auth = getAuth()
@@ -45,18 +46,23 @@ const AppRouter2 = () => {
             
             <Switch>
                 <PublicRoute2
-                    path="/auth"
+                   exact path="/auth"
                     component={AuthRouter2}
                     isAuthenticated={isLooggedIn}
                 />
                 <PrivateRoute2
-                 path="/task"
+                exact path="/task"
                  component={Task}
                  isAuthenticated={isLooggedIn}
                 />
                 <PrivateRoute2
-                    path="/"
+                   exact path="/"
                     component={Principal}
+                    isAuthenticated={isLooggedIn}
+                />
+                <PrivateRoute2
+                  exact path="/carrito"
+                    component={Carrito}
                     isAuthenticated={isLooggedIn}
                 />
                 <Redirect to="/auth/login" />
