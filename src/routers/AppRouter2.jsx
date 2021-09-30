@@ -4,17 +4,15 @@ import {
     Switch,
     Redirect
 } from "react-router-dom";
-//import Navbar from '../components/Navbar';
-import {AuthRouter2} from './AuthRouter2';
 import { PrivateRoute2 } from './PrivateRoute2';
 import { PublicRoute2 } from './PublicRoute2'
 import {Loading} from '../pages/Loading'
 import {getAuth, onAuthStateChanged} from 'firebase/auth'
 import { loginSincrono } from '../actions/actionLogin';
 import { useDispatch} from 'react-redux'
-import Task from '../components/Task'
-import {Principal} from '../pages/Principal'
-import {Carrito} from '../pages/Carrito'
+import {Login} from '../pages/Login'
+import {Registro} from '../pages/Registro'
+import DashBoardRouter from './DashBoardRouter';
 
 const AppRouter2 = () => {
     const auth = getAuth()
@@ -44,26 +42,20 @@ const AppRouter2 = () => {
             
             <Switch>
                 <PublicRoute2
-                    path="/auth"
-                    component={AuthRouter2}
+                    path="/login"
+                    component={Login}
+                    isAuthenticated={isLooggedIn}
+                />
+                <PublicRoute2
+                    path="/registro"
+                    component={Registro}
                     isAuthenticated={isLooggedIn}
                 />
                 <PrivateRoute2
-                exact path="/task"
-                 component={Task}
+                 path="/"
+                 component={DashBoardRouter}
                  isAuthenticated={isLooggedIn}
                 />
-                <PrivateRoute2
-                   exact path="/"
-                    component={Principal}
-                    isAuthenticated={isLooggedIn}
-                />
-                <PrivateRoute2
-                  exact path="/carrito"
-                    component={Carrito}
-                    isAuthenticated={isLooggedIn}
-                />
-                <Redirect to="/auth/login" />
             </Switch>
         </Router>
     )

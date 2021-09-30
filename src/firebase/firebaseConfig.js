@@ -19,7 +19,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const google = new GoogleAuthProvider();
 const facebook = new FacebookAuthProvider();
-const db = getFirestore(app) //relaciona con la cadena de colección para saber donde guardar la información
+const db = getFirestore() //relaciona con la cadena de colección para saber donde guardar la información
 
 export{
     app,

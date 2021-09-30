@@ -14,3 +14,8 @@ export const types = {
 }
 // Se añaden los "tipos" de tareas
 
+export const typesProducto={
+    registro: 'registro',
+    lista: 'lista'
+    
+}

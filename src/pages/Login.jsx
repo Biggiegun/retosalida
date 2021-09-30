@@ -84,7 +84,7 @@ export const Login = () => {
                     </Container>
                 </Container>
             </Container>
-            <Link to="/auth/registro">Registrarse</Link>
+            <Link to="/registro">Registrarse</Link>
         </Form>
         </div>
     )
