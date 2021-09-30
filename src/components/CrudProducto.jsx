@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import {useForm} from '../hooks/useForm'
 import { fileUpload } from '../helpers/fileUpload'
-import { actionProductos, agregarProducto } from '../actions/actionProductos'
+import { actionProductos, agregarProducto, listaProductos } from '../actions/actionProductos'
 import { agregarAsincronico } from '../actions/actionProductos'
 import { ListarProductos } from './ListarProductos'
 
@@ -38,6 +38,11 @@ export const CrudProducto = () => {
            console.log(error.message);
        })
    }
+
+   useEffect(() => {
+       dispatch(listaProductos());
+   }, [])
+
     return (
         <div>
              <form onSubmit={handleRegistro}>
