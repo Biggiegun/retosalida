@@ -1,5 +1,5 @@
 import { typesProducto } from "../types/types"
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import { addDoc, collection, getDocs, deleteDoc, query, where, doc } from "firebase/firestore";
 import { db } from "../firebase/firebaseConfig";
 
 export const agregarAsincronico = (
@@ -57,5 +57,28 @@ export const lista = (producto) =>{
   return {
       type: typesProducto.lista,
       payload: producto
+  }
+}
+
+// Eliminar 
+
+export const deleteAsincrono = (nombre) =>{
+  return async(dispatch) => {
+
+      const prodCollection = collection(db,"Productos");
+      const q = query(prodCollection,where("nombre","==",nombre))
+     
+      const datos = await getDocs(q);
+      datos.forEach((docu) => {
+          deleteDoc(doc(db,"Productos",docu.id));
+      })
+      dispatch(eliminar(nombre));
+  }
+}
+
+export const eliminar = (nombre) =>{
+  return{
+    type: typesProducto.delete,
+    payload: nombre
   }
 }

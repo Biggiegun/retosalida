@@ -16,6 +16,6 @@ export const types = {
 
 export const typesProducto={
     registro: 'registro',
-    lista: 'lista'
-    
+    lista: 'lista',
+    delete:'delete'
 }
