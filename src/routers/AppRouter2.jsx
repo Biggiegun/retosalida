@@ -11,8 +11,9 @@ import {getAuth, onAuthStateChanged} from 'firebase/auth'
 import { loginSincrono } from '../actions/actionLogin';
 import { useDispatch} from 'react-redux'
 import {Login} from '../pages/Login'
-import {Registro} from '../pages/Registro'
+//import {Registro} from '../pages/Registro'
 import DashBoardRouter from './DashBoardRouter';
+import {RegistroFormik} from '../pages/RegistroFormik';
 
 const AppRouter2 = () => {
     const auth = getAuth()
@@ -48,7 +49,7 @@ const AppRouter2 = () => {
                 />
                 <PublicRoute2
                     path="/registro"
-                    component={Registro}
+                    component={RegistroFormik}
                     isAuthenticated={isLooggedIn}
                 />
                 <PrivateRoute2
