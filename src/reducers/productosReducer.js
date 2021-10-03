@@ -6,7 +6,7 @@ const initialState ={
         nombre:"",
         descripcion:"",
         fecha:"",
-        iamgen:""
+        imagen:""
     }
 }
 
@@ -28,7 +28,7 @@ export const productosReducer = (state= initialState, action) => {
         case typesProducto.active:
             return{
                 ...state,
-                editPRoducto: action.payload
+                editProducto: action.payload
             }
         default:
             return state;
