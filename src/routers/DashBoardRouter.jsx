@@ -1,7 +1,7 @@
 import React from 'react'
 import {Route, Switch, Redirect} from 'react-router-dom'
 import {Principal}  from '../pages/Principal'
-import {Carrito} from '../pages/Carrito'
+import {Ubicacion} from '../pages/Ubicacion'
 import {CrudProducto} from '../components/CrudProducto'
 
 const DashBoardRouter = () => {
@@ -12,8 +12,8 @@ const DashBoardRouter = () => {
             component={Principal}
             />
             <Route exact 
-            path="/carrito"
-            component={Carrito}
+            path="/ubicacion"
+            component={Ubicacion}
             />
             <Route exact 
             path="/crudproducto"

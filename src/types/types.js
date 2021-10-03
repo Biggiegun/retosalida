@@ -17,5 +17,7 @@ export const types = {
 export const typesProducto={
     registro: 'registro',
     lista: 'lista',
-    delete:'delete'
+    delete:'delete',
+    active: 'active',
+    edit: 'edit'
 }

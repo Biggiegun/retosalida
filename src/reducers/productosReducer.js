@@ -1,7 +1,13 @@
 import {types, typesProducto} from '../types/types'
 
 const initialState ={
-    productos: []
+    productos: [],
+    editProducto:{
+        nombre:"",
+        descripcion:"",
+        fecha:"",
+        iamgen:""
+    }
 }
 
 export const productosReducer = (state= initialState, action) => {
@@ -18,6 +24,11 @@ export const productosReducer = (state= initialState, action) => {
         case typesProducto.delete:
             return{
                    productos:  state.productos.filter(item => item.nombre !== action.payload)
+            }
+        case typesProducto.active:
+            return{
+                ...state,
+                editPRoducto: action.payload
             }
         default:
             return state;

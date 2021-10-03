@@ -1,15 +1,17 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import {useForm} from '../hooks/useForm'
 import { fileUpload } from '../helpers/fileUpload'
 import { actionProductos, agregarProducto, listaProductos } from '../actions/actionProductos'
 import { agregarAsincronico } from '../actions/actionProductos'
 import { ListarProductos } from './ListarProductos'
+import { activeProduct } from '../actions/actionProductos'
+import {Edit} from '../actions/actionProductos'
 
 export const CrudProducto = () => {
     const dispatch = useDispatch()
 
-    const [values, handleInputChange, reset] = useForm({
+    const [values, handleInputChange, reset, setValues] = useForm({
         nombre:'',
         descripcion:'',
         fecha:'',
@@ -43,9 +45,28 @@ export const CrudProducto = () => {
        dispatch(listaProductos());
    }, [])
 
+    const [editForm, setEditForm] = useState(false)
+
+    const handleEdit = (producto) =>{
+        dispatch(activeProduct(producto.id, producto))
+         setEditForm(true)
+         setValues({
+            ...producto
+         })
+
+    }
+
+    const handlePut = (e) =>{
+        e.preventDefault();
+        dispatch(Edit(values))
+        reset()
+        setEditForm(false)
+    }
+
+
     return (
         <div>
-             <form onSubmit={handleRegistro}>
+             <form>
                 <h1>Productos</h1>
                 <div className="form-group">
  
@@ -86,8 +107,12 @@ export const CrudProducto = () => {
  
 
                     <div>
+                        {!editForm?
                         <button className="btn-warning my-2"
-                        type="submit">Guardar</button>
+                        type="submit" onClick={handleRegistro}>Enviar</button>:
+                        <button className="btn-warning my-2"
+                        type="submit" onClick={handlePut}>Guardar</button>
+                        }
                     </div>
  
                     <div>
@@ -97,7 +122,7 @@ export const CrudProducto = () => {
  
                 </div>
             </form>
-                <ListarProductos/>
+                <ListarProductos handleEdit = {handleEdit}/>
         </div>
     )
 }

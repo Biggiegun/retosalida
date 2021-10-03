@@ -3,7 +3,7 @@ import { Table } from 'react-bootstrap'
 import {useSelector, useDispatch} from 'react-redux'
 import {deleteAsincrono} from '../actions/actionProductos'
 
-export const ListarProductos = () => {
+export const ListarProductos = ({handleEdit}) => {
 
     const {productos} = useSelector(store => store.productos)
     // console.log(productos)
@@ -31,6 +31,7 @@ export const ListarProductos = () => {
                                     <td>{item.descripcion}</td>
                                     <td>{item.fecha}</td>
                                     <td><img src={item.imagen} alt="imagen producto" width="50px" height="50px"/></td>
+                                    <td><button onClick={()=>handleEdit(item)}>Editar</button></td>
                                     <td><button onClick={()=>dispatch(deleteAsincrono(item.nombre))}>Eliminar</button></td>
                                     </tr>
                                 ))

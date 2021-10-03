@@ -31,8 +31,8 @@ export const Navbar = () => {
             </Link>
             </li>
              <li className="nav-item">
-            <Link className="nav-link text-light" to="/carrito">
-            Carrito
+            <Link className="nav-link text-light" to="/ubicacion">
+            Tu ubicación...
             </Link>
             </li>
             </ul>

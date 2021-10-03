@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 import { Navbar } from '../components/Navbar';
+import { Footer } from '../components/Footer';
 
 export const PrivateRoute2 = ({
     isAuthenticated,
@@ -19,6 +20,7 @@ export const PrivateRoute2 = ({
                     : ( <Redirect to="/login" /> )
             )}
         />
+        <Footer/>
         </>
     )
 }
