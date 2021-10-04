@@ -25,8 +25,9 @@ export const Ubicacion = () => {
     }
 
     return (
-        <div>
-            <h1>Accede a tu ubicación!!</h1>
+        <div id="mapContainer">
+            <div>
+            <h1 id="tituloUbicacion">Accede a tu ubicación!!</h1>
             <div id="mapContainer">
             <MapContainer center={[6.217 , -75.567]} zoom={12} scrollWheelZoom={true}>
                 <TileLayer
@@ -39,6 +40,7 @@ export const Ubicacion = () => {
                     </Popup>
                 </Marker>
             </MapContainer>
+            </div>
             </div>
         </div>
     )
