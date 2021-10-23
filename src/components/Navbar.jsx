@@ -17,7 +17,7 @@ export const Navbar = () => {
             <Link className="btn btn-outline-dark m-2" to="/">GITINNOVA</Link>
             <p className= "text-light me-5 align-self-end"><b>Bienvenido, {name}</b></p>
             </div>
-            <button className="navbar-toggler bg-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button className="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">

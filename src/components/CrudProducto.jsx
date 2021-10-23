@@ -117,22 +117,22 @@ export const CrudProducto = () => {
                             onChange={handleFileChanged}
                         />
 
-                        <button className="btn-warning my-2" type="button"
+                        <button className="btn-dark my-2" type="button"
                         onClick={handlePictureClick}>Imagen</button>
                     </div>
  
 
                     <div>
                         {!editForm?
-                        <button className="btn-warning my-2"
+                        <button className="btn-dark my-2"
                         type="submit" onClick={handleRegistro}>Enviar</button>:
-                        <button className="btn-warning my-2"
+                        <button className="btn-dark my-2"
                         type="submit" onClick={handlePut}>Guardar</button>
                         }
                     </div>
  
                     <div>
-                        <button className="btn-warning my-2"
+                        <button className="btn-dark my-2"
                        type="button">Logout</button>
                     </div>
  

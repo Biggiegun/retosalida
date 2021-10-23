@@ -34,7 +34,7 @@ export const ListarProductos = ({handleEdit}) => {
                                     <td>{item.fecha}</td>
                                     <td>{item.correo}</td>
                                     <td>{item.github}</td>
-                                    <td><img src={item.imagen} alt="imagen producto" width="50px" height="50px"/></td>
+                                    <td><img src={item.imagen} alt="imagen" width="50px" height="50px"/></td>
                                     <td><button onClick={()=>handleEdit(item)}>Editar</button></td>
                                     <td><button onClick={()=>dispatch(deleteAsincrono(item.nombre))}>Eliminar</button></td>
                                     </tr>
