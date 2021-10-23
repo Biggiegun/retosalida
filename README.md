@@ -1,6 +1,6 @@
 ﻿# Reto Salida
 
-## Aplicativo similar a tienda en línea.
+## Aplicativo consulta repositiorios.
 
 - La aplicación Web debe funcionar en Chrome.
 - Puede utilizar cualquier lenguaje que transpile a JS.
