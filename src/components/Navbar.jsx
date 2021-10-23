@@ -11,10 +11,10 @@ export const Navbar = () => {
 
     return (
         <div>
-         <nav className="navbar navbar-expand-lg navbar-light bg-dark">
+         <nav className="navbar navbar-expand-lg navbar-light" style={{backgroundColor: 'darkgreen'}}>
             <div className="container-fluid">
             <div className="d-flex flex-wrap">
-            <Link className="navbar-brand" to="/"><img src="https://res.cloudinary.com/biggiegun/image/upload/v1633024545/sprint3/logo-amazon_piimmd.png" alt="Logo Amazonas"/></Link>
+            <Link className="btn btn-outline-dark m-2" to="/">GITINNOVA</Link>
             <p className= "text-light me-5 align-self-end"><b>Bienvenido, {name}</b></p>
             </div>
             <button className="navbar-toggler bg-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,20 +27,15 @@ export const Navbar = () => {
             </li>
             <li className="nav-item">
             <Link className="nav-link text-light" to="/crudproducto">
-            Productos
-            </Link>
-            </li>
-             <li className="nav-item">
-            <Link className="nav-link text-light" to="/ubicacion">
-            Tu ubicación...
+            Candidatos
             </Link>
             </li>
             </ul>
                 <form className="d-flex me-2 my-2">
-                    <input className="form-control me-2" type="search" placeholder="Buscar Producto..." aria-label="Search"/>
-                    <button className="btn btn-outline-warning" type="submit">Buscar</button>
+                    <input className="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search"/>
+                    <button className="btn btn-outline-dark" type="submit">Buscar</button>
                 </form>
-            <button className="btn-warning" onClick={()=>dispatch(startLogout())}>
+            <button className="btn btn-outline-dark" onClick={()=>dispatch(startLogout())}>
             Logout
             </button>
             </div>

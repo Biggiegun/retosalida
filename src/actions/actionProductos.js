@@ -4,16 +4,20 @@ import { db } from "../firebase/firebaseConfig";
 
 export const agregarAsincronico = (
   nombre,
-  descripcion,
+  cedula,
   fecha,
+  correo,
+  github,
   imagen
 ) => {
   return (dispatch) => {
     const producto = {
      
       nombre,
-      descripcion,
+      cedula,
       fecha,
+      correo,
+      github,
       imagen,
     };
 
@@ -103,8 +107,10 @@ export const Edit = (producto) =>{
     datos.forEach((docu)=>{
       updateDoc(doc(db, "Productos", docu.id),{
         nombre: producto.nombre,
-        descripcion: producto.descripcion,
+        cedula: producto.cedula,
         fecha: producto.fecha,
+        correo: producto.correo,
+        github: producto.github,
         imagen: producto.imagen
       })
     })

@@ -33,7 +33,7 @@ export const RegistroFormik = () => {
 
     return (
         <div>
-            <h1>Página Registro - AMAZONAS</h1>
+            <h1>Página Registro - Github Repositorio</h1>
             <Form onSubmit={formik.handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicName">
                     <Form.Label>Nombre</Form.Label>

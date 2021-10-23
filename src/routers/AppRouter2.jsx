@@ -14,6 +14,7 @@ import {Login} from '../pages/Login'
 //import {Registro} from '../pages/Registro'
 import DashBoardRouter from './DashBoardRouter';
 import {RegistroFormik} from '../pages/RegistroFormik';
+import { listaProductos } from '../actions/actionProductos';
 
 const AppRouter2 = () => {
     const auth = getAuth()
@@ -26,6 +27,7 @@ const AppRouter2 = () => {
             if(user?.uid){
                 setisLooggedIn(true)
                 dispatch(loginSincrono(user.uid, user.displayName))
+                dispatch(listaProductos())
             }else{
                 setisLooggedIn(false)
             }

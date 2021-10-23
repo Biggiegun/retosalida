@@ -2,12 +2,11 @@ import React from 'react'
 import { useDispatch} from 'react-redux'
 import { useSelector} from 'react-redux'
 import {listaProductos} from '../actions/actionProductos'
-import ReactImageMagnify from 'react-image-magnify'
 
 export const Principal = () => {
     const { productos } = useSelector(store => store.productos)
     const dispatch = useDispatch()
-    dispatch(listaProductos())
+    //dispatch(listaProductos())
 
     return (
         <div>
@@ -19,17 +18,6 @@ export const Principal = () => {
               <div className="card mb-3">
                 <div className="row g-0">
                   <div className="col-md-4">
-                    <ReactImageMagnify {...{
-                      smallImage: {
-                        isFluidWidth: true,
-                        src: item.imagen
-                      },
-                      largeImage: {
-                        src: item.imagen,
-                        width: 1200,
-                        height: 1800
-                      }
-                    }} />
                   </div>
                   <div className="col-md-8">
                     <div className="card-body">

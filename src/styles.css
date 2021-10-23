@@ -21,12 +21,13 @@
 
 footer{
     padding: 2em;
-    background-color: #242F3E;
     display: flex;
+    background-color: darkgreen;
     justify-content: center;
     align-items: center;
     position: relative;
     bottom: 0; 
+    width: 100vw;
 }
 
 h6{
@@ -35,10 +36,4 @@ h6{
 
 #footerContainer{
     display: block;
-}
-
-#imageContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }

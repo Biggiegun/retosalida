@@ -16,8 +16,10 @@ export const ListarProductos = ({handleEdit}) => {
                 <thead>
                     <tr>
                         <th>Nombre</th>
-                        <th>Descripción</th>
+                        <th>Cedula</th>
                         <th>Fecha ingreso</th>
+                        <th>Email</th>
+                        <th>Github</th>
                         <th>Imagen</th>
                     </tr>
                 </thead>
@@ -28,8 +30,10 @@ export const ListarProductos = ({handleEdit}) => {
                                 productos.map((item, index)=>(
                                     <tr key={index}>
                                     <td>{item.nombre}</td>
-                                    <td>{item.descripcion}</td>
+                                    <td>{item.cedula}</td>
                                     <td>{item.fecha}</td>
+                                    <td>{item.correo}</td>
+                                    <td>{item.github}</td>
                                     <td><img src={item.imagen} alt="imagen producto" width="50px" height="50px"/></td>
                                     <td><button onClick={()=>handleEdit(item)}>Editar</button></td>
                                     <td><button onClick={()=>dispatch(deleteAsincrono(item.nombre))}>Eliminar</button></td>

@@ -13,16 +13,18 @@ export const CrudProducto = () => {
 
     const [values, handleInputChange, reset, setValues] = useForm({
         nombre:'',
-        descripcion:'',
+        cedula:'',
         fecha:'',
+        correo: '',
+        github:'',
         imagen:''
     })
 
-    let {nombre, descripcion, fecha, imagen} = values;
+    let {nombre, cedula, fecha, correo, github, imagen} = values;
 
     const handleRegistro = e => {
         e.preventDefault();
-        dispatch(agregarAsincronico(nombre, descripcion, fecha, imagen));
+        dispatch(agregarAsincronico(nombre, cedula, fecha, correo, github, imagen));
         reset();
     }
 
@@ -41,9 +43,9 @@ export const CrudProducto = () => {
        })
    }
 
-   useEffect(() => {
+   /*useEffect(() => {
        dispatch(listaProductos());
-   }, [])
+   }, [])*/
 
     const [editForm, setEditForm] = useState(false)
 
@@ -67,7 +69,7 @@ export const CrudProducto = () => {
     return (
         <div>
              <form>
-                <h1>Productos</h1>
+                <h1>Gestión candidatos</h1>
                 <div className="form-group">
  
                     <div className="form-group col-md-4">
@@ -78,16 +80,30 @@ export const CrudProducto = () => {
                     </div>
  
                     <div className="form-group col-md-4">
-                        <label htmlFor="descripcion">Descrición</label>
-                        <input className="form-control" type="text" name="descripcion" id="descripcion" 
-                        value={descripcion}
+                        <label htmlFor="descripcion">Cédula</label>
+                        <input className="form-control" type="text" name="cedula" id="cedula" 
+                        value={cedula}
                         onChange={handleInputChange}/>
                     </div>
  
                     <div className="form-group col-md-4">
-                        <label htmlFor="fecha">Fecha ingreso</label>
+                        <label htmlFor="fecha">Fecha Nacimiento</label>
                         <input className="form-control" type="date" name="fecha" id="fecha" 
                         value={fecha}
+                        onChange={handleInputChange}/>
+                    </div>
+
+                    <div className="form-group col-md-4">
+                        <label htmlFor="fecha">Email</label>
+                        <input className="form-control" type="email" name="correo" id="correo" 
+                        value={correo}
+                        onChange={handleInputChange}/>
+                    </div>
+
+                    <div className="form-group col-md-4">
+                        <label htmlFor="fecha">Usuario Github</label>
+                        <input className="form-control" type="text" name="github" id="github" 
+                        value={github}
                         onChange={handleInputChange}/>
                     </div>
 

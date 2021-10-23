@@ -39,7 +39,7 @@ export const Login = () => {
 
     return (
         <div>
-            <h1>Página Login - AMAZONAS</h1>
+            <h1>Página Login - Github Repositorios</h1>
             <Form onSubmit ={handleLogin}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Correo</Form.Label>
