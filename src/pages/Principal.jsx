@@ -119,7 +119,7 @@ export const Principal = () => {
                 <td>{element.description}</td>
                 <td>{element.default_branch}</td>
                 <td>{element.language}</td>
-                <td><a href={element.html_url}>Ver repositorio</a></td>
+                <td><a href={element.html_url} rel="noopener">Ver repositorio</a></td>
               </tr>
             ))
           ) : (
